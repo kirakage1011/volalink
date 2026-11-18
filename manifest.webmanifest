@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "ボラリンク（仮）",
+  "short_name": "ボラリンク",
+  "description": "地域のボランティアを見つけて、参加につなげるアプリ",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7faf8",
+  "theme_color": "#176b58",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

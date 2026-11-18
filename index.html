@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#176b58">
+  <meta name="description" content="地域のボランティアを見つけて、参加につなげるアプリ">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>ボラリンク（仮）</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">V</span><span>ボラリンク<span class="sub">β版・試作品</span></span></div>
+    <div class="points"><span>保有ポイント</span><strong id="point-total">0 pt</strong></div>
+  </header>
+  <main id="app" class="app-shell">
+    <section id="home" class="page active">
+      <div class="hero">
+        <p class="eyebrow">YOUR ACTION, OUR COMMUNITY</p>
+        <h1>あなたの一歩が、<br>地域のつながりに。</h1>
+        <p>興味や予定に合うボランティアを見つけよう。</p>
+        <button class="primary" data-go="search">活動を探す <span>→</span></button>
+      </div>
+      <div class="section-heading"><div><p class="eyebrow">PICK UP</p><h2>おすすめの活動</h2></div><button class="text-button" data-go="search">すべて見る →</button></div>
+      <div id="featured-list" class="cards"></div>
+      <div class="notice"><strong>参加前に確認しよう</strong><p>対象年齢・集合場所・活動時間・主催団体・当日の責任者を確認してから申し込んでね。</p></div>
+    </section>
+
+    <section id="search" class="page">
+      <p class="eyebrow">FIND AN OPPORTUNITY</p><h1 class="page-title">活動を探す</h1>
+      <div class="filters">
+        <label>キーワード<input id="keyword" type="search" placeholder="例：清掃、子ども、自然"></label>
+        <label>活動分野<select id="category"><option value="">すべての分野</option><option>環境・清掃</option><option>子ども・教育</option><option>地域イベント</option><option>福祉・交流</option></select></label>
+        <div class="filter-row">
+          <label>日付<input id="date-filter" type="date"></label>
+          <label>時間帯<select id="time-filter"><option value="">指定なし</option><option value="morning">午前</option><option value="afternoon">午後</option><option value="evening">夕方</option></select></label>
+        </div>
+      </div>
+      <div class="result-heading"><strong id="result-count">募集中の活動</strong><span>サンプル情報</span></div>
+      <div id="search-list" class="cards"></div>
+    </section>
+
+    <section id="detail" class="page">
+      <button class="back-button" data-go="search">← 一覧に戻る</button>
+      <div id="detail-content"></div>
+    </section>
+
+    <section id="favorites" class="page">
+      <p class="eyebrow">SAVED ACTIVITIES</p><h1 class="page-title">お気に入り</h1>
+      <div id="favorite-list" class="cards"></div>
+    </section>
+
+    <section id="mypage" class="page">
+      <p class="eyebrow">MY PAGE</p><h1 class="page-title">マイページ</h1>
+      <div class="profile-card"><div class="avatar">U</div><div><strong>ゲストユーザー</strong><p>試作品のためログイン機能は未実装です</p></div></div>
+      <div class="stat-grid"><div class="stat"><span>保有ポイント</span><strong id="my-points">0 pt</strong></div><div class="stat"><span>参加申し込み</span><strong id="my-applications">0 件</strong></div></div>
+      <h2 class="subheading">活動履歴</h2><div id="history-list" class="empty-state">完了した活動はまだありません。</div>
+      <h2 class="subheading">表彰・認定</h2><div class="empty-state">活動実績に応じた表彰機能は今後追加予定です。</div>
+      <p class="privacy-note">活動履歴やプロフィールは、本人の同意なく公開しない設計を予定しています。</p>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="メインメニュー">
+    <button class="nav-item selected" data-go="home"><span>⌂</span>ホーム</button>
+    <button class="nav-item" data-go="search"><span>⌕</span>探す</button>
+    <button class="nav-item" data-go="favorites"><span>♡</span>お気に入り</button>
+    <button class="nav-item" data-go="mypage"><span>◯</span>マイページ</button>
+  </nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
